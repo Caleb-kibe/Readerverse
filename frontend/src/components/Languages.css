@@ -1,0 +1,56 @@
+.languages-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.language-dropdown {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.books-container {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.books-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.books-list li {
+  margin: 10px 0;
+}
+
+.books-list h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.books-list p {
+  font-size: 14px;
+  color: #7f8c8d;
+}

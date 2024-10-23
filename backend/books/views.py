@@ -17,6 +17,7 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
 
+@login_required
 def fetch_book(request, title):
     data = get_book_data(title)
     if data:

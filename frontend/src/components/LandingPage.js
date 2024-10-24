@@ -1,26 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'; // Ensure useEffect and useState are imported
+import { Link, useNavigate } from 'react-router-dom';
 import './LandingPage.css';
-import { useEffect, useState } from 'react';
+import { useAuth } from '../auth/hooks/useAuth';
 // import BookSearch from './BookSearch';
 
 const LandingPage = () => {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true); // Initialize loading state
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   // Fetch book data from a public API
   useEffect(() => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q=javascript')
-    // fetch('https://www.googleapis.com/books/v1/volumes?q={title}')
+    fetch('https://www.googleapis.com/books/v1/volumes?q=chemistry')
       .then(response => response.json())
       .then(data => {
         if (data.items) {
-          setBooks(data.items.slice(0, 6));  // Only slice if items exist
+          setBooks(data.items.slice(0, 6)); // Only slice if items exist
         } else {
-          setBooks([]);  // Set to empty array if no books found
+          setBooks([]); // Set to empty array if no books found
         }
       })
-      .catch(error => console.error("Error fetching books:", error));
-  }, []);  
+      .catch(error => console.error("Error fetching books:", error))
+      .finally(() => setLoading(false)); // Set loading to false after fetching
+  }, []);
+
+  // Function to handle book download action
+  const handleDownload = (bookId) => {
+    if (!user) {
+      navigate('/login'); // Redirect to login if user is not logged in
+    } else {
+      // Logic for downloading or accessing the book
+      console.log("User can download the book", bookId);
+    }
+  };
 
   return (
     <div className="LandingPage">
@@ -53,12 +66,15 @@ const LandingPage = () => {
           </div>
         </div>
       </section> */}
+
       {/* Featured Section */}
       <section className="featured-section">
         <div className="container">
           <h2>Explore Popular Books</h2>
           <div className="book-grid">
-            {books.length > 0 ? (
+            {loading ? (
+              <p>Loading books...</p> // Show loading message while fetching
+            ) : books.length > 0 ? (
               books.map(book => (
                 <div key={book.id} className="book-card">
                   <img
@@ -70,36 +86,20 @@ const LandingPage = () => {
                     <h3>{book.volumeInfo.title}</h3>
                     <p>{book.volumeInfo.subtitle || 'No description available'}</p>
                     <Link to={`/books/${book.id}`} className="btn">Read More</Link>
+                    <button onClick={() => handleDownload(book.id)} className="btn">
+                      {user ? "Download" : "Login to Download"}
+                    </button>
                   </div>
                 </div>
               ))
             ) : (
-              <p>Loading books...</p>
+              <p>No books found.</p>
             )}
-
-            {/* {books.length > 0 ? (
-              books.map(book => (
-                <div key={book.bib_key} className="book-card">
-                  <img
-                    src={book.volumeInfo.imageLinks?.thumbnail || 'https://via.placeholder.com/150'}
-                    alt={book.volumeInfo.title}
-                    className="book-image"
-                  />
-                  <div className="book-info">
-                    <h3>{book.title}</h3>
-                    <p>{book.volumeInfo.subtitle || 'No description available'}</p>
-                    <Link to={`/books/${book.id}`} className="btn">Read More</Link>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>Loading books...</p>
-            )} */}
           </div>
         </div>
       </section>
 
-      {/* Featured Section */}
+      {/* Featured Categories Section */}
       <section className="featured-section">
         <div className="container">
           <h2>Featured Categories</h2>

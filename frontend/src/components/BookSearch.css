@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-  --primary-color: #6366f1;
+  --primary-color: #2c3e50;
   --text-color: #1f2937;
   --background-color: #f9fafb;
   --card-background: #ffffff;
@@ -60,7 +60,7 @@ button {
 }
 
 button:hover {
-  background-color: #4f46e5;
+  background-color: #1f2937;
 }
 
 .loading {
@@ -70,7 +70,7 @@ button:hover {
 }
 
 .error {
-  color: #ef4444;
+  color: #1f2937;
   text-align: center;
   font-weight: 600;
   margin-top: 1rem;

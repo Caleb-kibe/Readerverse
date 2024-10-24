@@ -1,0 +1,104 @@
+/* Navigation bar */
+.navbar {
+  background-color: #003366; /* Dark blue */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+}
+
+.navbar a:hover {
+  color: #f0a500;
+}
+
+/* Grid container for book cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  margin-top: 5rem; /* To account for fixed navbar */
+}
+
+/* Book card */
+.card {
+  background-color: #004080; /* Dark blue */
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #fff;
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Rating style */
+.rating {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar a {
+    font-size: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .card {
+    margin: 0 auto; /* Center cards */
+  }
+
+  .card img {
+    height: 200px; /* Reduce image height on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar a {
+    font-size: 0.9rem; /* Smaller font on very small screens */
+  }
+
+  .card {
+    border-radius: 5px; /* Slightly smaller border-radius for small screens */
+  }
+
+  .card img {
+    height: 150px; /* Further reduce image height on very small screens */
+  }
+}

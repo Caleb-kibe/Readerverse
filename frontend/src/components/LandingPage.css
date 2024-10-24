@@ -146,7 +146,7 @@ body, html {
 }
 
 .btn {
-  background-color: #ff6f61;
+  background-color: #2e4058;
   color: white;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -154,7 +154,7 @@ body, html {
 }
 
 .btn:hover {
-  background-color: #ff4a41;
+  background-color: #1f2937;
 }
 
 .card-grid {

@@ -147,7 +147,7 @@ Here are some basic API endpoints for the backend:
 - `PUT /api/books/<id>/`: Update a book's information (admin only).
 - `DELETE /api/books/<id>/`: Delete a book (admin only).
 
-## Contributing
+Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature-branch`).
@@ -155,17 +155,6 @@ Contributions are welcome! To contribute:
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a Pull Request.
 
-## License
+License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
 
-### Key Sections:
-- **Features**: Lists what the app does.
-- **Tech Stack**: Describes the tools and frameworks used.
-- **Project Structure**: Visualizes the file organization.
-- **Installation**: Instructions for setting up the project.
-- **Running the Project**: Steps to launch both frontend and backend.
-- **API Endpoints**: Describes some API routes.
-- **Contributing**: Guidelines for contributing to the project.
-
-You can customize it further based on your project's needs!

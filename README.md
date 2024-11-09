@@ -1,11 +1,8 @@
-Here's a comprehensive `README.md` file template for your **Readerverse** project:
-
-```markdown
-# Readerverse
+Readerverse
 
 Readerverse is a web application that allows users to explore, search, and review a collection of books. The project is built using Django for the backend and React for the frontend. This README provides an overview of the project structure, setup instructions, and key features.
 
-## Table of Contents
+Table of Contents
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -15,18 +12,18 @@ Readerverse is a web application that allows users to explore, search, and revie
 - [Contributing](#contributing)
 - [License](#license)
 
-## Features
+Features
 - Browse and search through a collection of books.
 - View book details including title, author, genre, and publication date.
 - Users can leave reviews and rate books.
 - Responsive and intuitive user interface built with React.
 
-## Tech Stack
-### Backend
+Tech Stack
+Backend
 - **Django**: Web framework for the backend.
 - **Django REST Framework (DRF)**: For building RESTful APIs.
 
-### Frontend
+Frontend
 - **React**: JavaScript library for building user interfaces.
 - **Axios**: For making API requests from the frontend.
 

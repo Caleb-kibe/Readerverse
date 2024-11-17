@@ -12,7 +12,7 @@ const LandingPage = () => {
 
   // Fetch book data from a public API
   useEffect(() => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q=chemistry')
+    fetch('https://www.googleapis.com/books/v1/volumes?q=javascript')
       .then(response => response.json())
       .then(data => {
         if (data.items) {
